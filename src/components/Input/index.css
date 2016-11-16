@@ -1,0 +1,23 @@
+.Input {
+	background: #FFF;
+	border: 0;
+	border-radius: 2px;
+	box-shadow: 0 0 0 1px #C7CBCE inset;
+	box-sizing: border-box;
+	font-size: 16px;
+	padding: 5px;
+}
+
+.Input_hover {
+	box-shadow: 0 0 0 1px #999EA2 inset;
+}
+
+.Input_focus {
+	outline: 0;
+	box-shadow: 0 0 0 2px #2789DE inset;
+}
+
+.Input_active {
+	outline: 0;
+	box-shadow: 0 0 0 2px #C2C6C7 inset;
+}

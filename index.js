@@ -1,4 +1,4 @@
-import Input from './src/components/Input'
+import Input from 'components/Input'
 
 export {
     Input
