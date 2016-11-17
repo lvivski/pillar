@@ -15,7 +15,7 @@ var nodeEnv = process.env.NODE_ENV
 var isProd = nodeEnv === 'production'
 
 module.exports = {
-	devtool: isProd ? 'source-map' : 'eval',
+	devtool: isProd ? 'source-map' : 'eval-source-map',
 	bail: isProd,
 	stats: {
 		colors: true

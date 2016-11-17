@@ -1,5 +1,9 @@
-import Input from 'components/Input'
+import { Input, Checkbox, Radio, Search, Range } from 'components/Input'
 
 export {
-    Input
+    Input,
+		Checkbox,
+		Radio,
+		Search,
+		Range
 }

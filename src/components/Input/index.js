@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import HTMLControl from '../HTMLControl'
+import Checkbox from './Checkbox'
+import Input from './Input'
+import Radio from './Radio'
+import Range from './Range'
+import Search from './Search'
 
-@HTMLControl('Input')
-class Input extends Component {
-	render () {
-		return (
-			<input {...this.props} />
-		)
-	}
+export {
+  Checkbox,
+  Input,
+  Radio,
+  Range,
+  Search
 }
-
-export default Input
