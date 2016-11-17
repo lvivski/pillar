@@ -5,7 +5,7 @@ import { classname } from '../../util'
 export default type => Control => class extends Component {
 
 	static propTypes = {
-		value: PropTypes.string,
+		value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]),
 		checked: PropTypes.bool,
 		invalid: PropTypes.bool,
 		onChange: PropTypes.func,
@@ -63,7 +63,8 @@ export default type => Control => class extends Component {
 	onChange(e) {
 		this.setState({
 			value: e.target.value,
-			checked: e.target.checked
+			checked: e.target.checked,
+			focus: true
 		})
 
 		if (this.props.onChange) {

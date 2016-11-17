@@ -5,6 +5,13 @@ const __cache__ = {}
 
 class Radio extends Component {
 
+	constructor(props) {
+		super(props)
+		this.state = {
+			checked: props.checked || false
+		}
+	}
+
   componentWillMount() {
     __cache__[this.props.name] = __cache__[this.props.name] || []
     __cache__[this.props.name].push(this)
@@ -38,7 +45,7 @@ class Radio extends Component {
 
 	render() {
 		return (
-			<Input {...this.props} type="radio" onChange={this.onChange.bind(this)} preventClickFocus />
+			<Input {...this.props} type="radio" checked={this.state.checked} onChange={this.onChange.bind(this)} preventClickFocus />
 		)
 	}
 }

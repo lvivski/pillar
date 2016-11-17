@@ -7,6 +7,7 @@
 	height: 25px;
 	padding: 5px;
 	transition: box-shadow .2s;
+	vertical-align: middle;
 }
 
 .Input,
@@ -34,7 +35,37 @@
 }
 
 .Input[type=range] {
-  box-shadow: none;
+  appearance: none;
+  background-color: #C7CBCE;
+  height: 6px;
+  padding: 0;
+	margin: 10px 3px;
+	box-shadow: none;
+	vertical-align: top;
+}
+
+.Input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  background: #FFF;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+	padding: 0;
+  margin: 0;
+  box-shadow: 0 0 0 1px #C7CBCE inset;
+	transition: box-shadow .2s;
+}
+
+.Input_hover[type=range]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #999EA2 inset;
+}
+
+.Input_active[type=range]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2.5px #999EA2 inset;
+}
+
+.Input_focus[type=range]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px #2084D2 inset;
 }
 
 .Input[type=radio],
@@ -87,14 +118,14 @@
 
 .Input_checked[type=checkbox].Input_focus,
 .Input_checked[type=radio].Input_focus {
-	box-shadow: 0 0 0 6px #2789DE inset, 0 0 3px 0px #2789DE;
+	box-shadow: 0 0 0 6px #2789DE inset, 0 0 5px 0px #2789DE;
 }
 
 .Input_checked[type=checkbox].Input_focus.Input_active {
-	box-shadow: 0 0 0 3px #2789DE inset, 0 0 3px 0px #2789DE;
+	box-shadow: 0 0 0 3px #2789DE inset, 0 0 5px 0px #2789DE;
 }
 .Input_checked[type=radio].Input_focus.Input_active {
-	box-shadow: 0 0 0 5px #2789DE inset, 0 0 3px 0px #2789DE;
+	box-shadow: 0 0 0 5px #2789DE inset, 0 0 5px 0px #2789DE;
 }
 
 .Input_checked[type=checkbox]:after {
@@ -110,6 +141,7 @@
 	width: 36px;
 	height: 20px;
 	margin: 3px;
+	vertical-align: middle;
 }
 
 .ToggleSlider {

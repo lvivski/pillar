@@ -6,16 +6,16 @@ var App = function (props) {
 					React.createElement('br'),
 					React.createElement(Pillar.Checkbox),
 					React.createElement('br'),
-					React.createElement(Pillar.Radio, {name: 'name'}),
-					React.createElement(Pillar.Radio, {name: 'name'}),
-					React.createElement(Pillar.Checkbox, {toggle: true}),
+					React.createElement(Pillar.Radio, {name: 'name', value: 1}),
+					React.createElement(Pillar.Radio, {name: 'name', value: 2}),
+					React.createElement(Pillar.Radio, {toggle: true, name: 'name', value: 3}),
 					React.createElement('br'),
 					React.createElement(Pillar.Range),
+					React.createElement(Pillar.Checkbox, {toggle: true}),
 					React.createElement('br'),
 					React.createElement(Pillar.Search),
 					React.createElement('br')
 				])
-
     );
 };
 

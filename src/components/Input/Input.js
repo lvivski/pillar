@@ -6,7 +6,7 @@ import { classname } from '../../util'
 @HTMLControl('Input')
 class Input extends Component {
 	render () {
-		const { toggle, ...props } = this.props
+		const { toggle, preventClickFocus, ...props } = this.props
 
 		if (toggle) {
 			const classNameToggle = `${this.props.className} ToggleInput`;
