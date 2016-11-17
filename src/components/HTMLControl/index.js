@@ -14,7 +14,7 @@ export default type => Control => class extends Component {
 		onMouseLeave: PropTypes.func,
 		onMouseEnter: PropTypes.func,
 		onMouseDown: PropTypes.func,
-		onMouseUp: PropTypes.func
+		preventClickFocus: PropTypes.bool
 	}
 
 	constructor(props) {
@@ -28,6 +28,8 @@ export default type => Control => class extends Component {
 			hovered: false,
 			pressed: false
 		}
+
+		this.onMouseUp = this.onMouseUp.bind(this)
 	}
 
 	componentWillReceiveProps({ value, checked, invalid }) {
@@ -70,9 +72,11 @@ export default type => Control => class extends Component {
 	}
 
 	onFocus(e) {
-		this.setState({
-			focused: true
-		})
+		if (!(this.props.preventClickFocus && this.state.pressed)) {
+			this.setState({
+				focused: true
+			})
+		}
 
 		if (this.props.onFocus) {
 			this.props.onFocus(e)
@@ -117,6 +121,8 @@ export default type => Control => class extends Component {
 		if (this.props.onMouseDown) {
 			this.props.onMouseDown(e)
 		}
+
+		document.addEventListener('mouseup', this.onMouseUp)
 	}
 
 	onMouseUp(e) {
@@ -124,9 +130,7 @@ export default type => Control => class extends Component {
 			pressed: false
 		})
 
-		if (this.props.onMouseUp) {
-			this.props.onMouseUp(e)
-		}
+		document.removeEventListener('mouseup', this.onMouseUp)
 	}
 
 	render() {
@@ -155,8 +159,7 @@ export default type => Control => class extends Component {
 			onBlur: this.onBlur.bind(this),
 			onMouseEnter: this.onMouseEnter.bind(this),
 			onMouseLeave: this.onMouseLeave.bind(this),
-			onMouseDown: this.onMouseDown.bind(this),
-			onMouseUp: this.onMouseUp.bind(this)
+			onMouseDown: this.onMouseDown.bind(this)
 		})
 
 		return (

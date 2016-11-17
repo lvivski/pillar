@@ -9,17 +9,21 @@
 	transition: box-shadow .2s;
 }
 
+.Input,
+.Input:hover,
+.Input:active {
+	outline: 0;
+}
+
 .Input_hover {
 	box-shadow: 0 0 0 1px #999EA2 inset;
 }
 
 .Input_focus {
-	outline: 0;
 	box-shadow: 0 0 0 2px #2789DE inset;
 }
 
 .Input_active {
-	outline: 0;
 	box-shadow: 0 0 0 2px #C2C6C7 inset;
 }
 
@@ -81,6 +85,18 @@
 	transition: box-shadow .1s;
 }
 
+.Input_checked[type=checkbox].Input_focus,
+.Input_checked[type=radio].Input_focus {
+	box-shadow: 0 0 0 6px #2789DE inset, 0 0 3px 0px #2789DE;
+}
+
+.Input_checked[type=checkbox].Input_focus.Input_active {
+	box-shadow: 0 0 0 3px #2789DE inset, 0 0 3px 0px #2789DE;
+}
+.Input_checked[type=radio].Input_focus.Input_active {
+	box-shadow: 0 0 0 5px #2789DE inset, 0 0 3px 0px #2789DE;
+}
+
 .Input_checked[type=checkbox]:after {
 	opacity: 1;
 }
@@ -103,9 +119,7 @@
 	width: 20px;
 }
 
-.ToggleInput.Input,
-.ToggleInput.Input_hover,
-.ToggleInput.Input_active {
+.ToggleInput.Input {
   position: absolute;
   width: 36px;
   height: 20px;
@@ -113,7 +127,7 @@
 	border-radius: 10px;
 	background-color: #C7CBCE;
 	box-shadow: 0 0 0 1px #C7CBCE inset;
-	transition: box-shadow .2s, background-color .3s;
+	transition: box-shadow .2s, background-color .35s;
 }
 
 .ToggleInput.Input_checked,
@@ -121,7 +135,6 @@
 	box-shadow: 0 0 0 6px #248FEA inset;
 	background-color: #248FEA;
 }
-
 
 .ToggleInput:after {
 	display: none !important;
@@ -158,9 +171,14 @@
 }
 
 .ToggleInput.Input_active + .ToggleSlider:before {
-	box-shadow: 0 0 0 3px #999EA2 inset;
+	box-shadow: 0 0 0 2.5px #999EA2 inset;
 }
 
 .ToggleInput.Input_checked.Input_active + .ToggleSlider:before {
-	box-shadow: 0 0 0 3px #2084D2 inset;
+	box-shadow: 0 0 0 2.5px #2084D2 inset;
 }
+
+.ToggleInput.Input_focus + .ToggleSlider:before {
+	box-shadow: 0 0 0 2px #2084D2 inset;
+}
+

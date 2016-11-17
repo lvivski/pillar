@@ -38,7 +38,7 @@ class Radio extends Component {
 
 	render() {
 		return (
-			<Input {...this.props} type="radio" onChange={this.onChange.bind(this)} />
+			<Input {...this.props} type="radio" onChange={this.onChange.bind(this)} preventClickFocus />
 		)
 	}
 }

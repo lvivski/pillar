@@ -1,6 +1,6 @@
-node_modules
 src
 test
 index*
 webpack.config.js
 .babelrc
+jsconfig.json
